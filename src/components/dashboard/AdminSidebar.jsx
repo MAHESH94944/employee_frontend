@@ -1,8 +1,7 @@
 // AdminSidebar.jsx
 import { NavLink } from 'react-router-dom'
-import { FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaRegCalendarAlt, FaTachometerAlt, FaUsers } from 'react-icons/fa'
+import { FaFileAlt, FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaRegCalendarAlt, FaTachometerAlt, FaUsers } from 'react-icons/fa'
 import { AiOutlineFileText } from 'react-icons/ai'
-
 const AdminSidebar = () => {
     return (
         <div className='bg-gradient-to-b from-gray-800 to-gray-900 text-white h-screen fixed left-0 top-0 bottom-0 w-64 shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl'>
@@ -52,6 +51,12 @@ const AdminSidebar = () => {
                     className={({ isActive }) => `${isActive ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg" : "hover:bg-gray-700 hover:text-emerald-300"} flex items-center space-x-4 py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-md`}>
                     <AiOutlineFileText className="text-lg" />
                     <span className="font-medium">Attendance Report</span>
+                </NavLink>
+
+                <NavLink to="http://localhost:5174"
+                    className={({ isActive }) => `${isActive ? "bg-gradient-to-r from-teal-500 to-emerald-500 text-white shadow-lg" : "hover:bg-gray-700 hover:text-emerald-300"} flex items-center space-x-4 py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-md`}>
+                    <FaFileAlt className="text-lg" />
+                    <span className="font-medium">Resume Analyzer</span>
                 </NavLink>
 
                 <NavLink to="/admin-dashboard/setting"

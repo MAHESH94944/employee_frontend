@@ -22,6 +22,7 @@ import Table from './components/leave/Table';
 import Detail from './components/leave/Detail';
 import Attendance from './components/attendance/Attendance';
 import AttendanceReport from './components/attendance/AttendanceReport';
+import Chatbot from './components/chatbot/App';
 
 function App() {
   return (
@@ -75,6 +76,7 @@ function App() {
           <Route path='/employee-dashboard/setting' element={<Setting />}></Route>
         </Route>
       </Routes>
+      <Chatbot />
     </BrowserRouter>
   );
 }
