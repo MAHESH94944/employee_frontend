@@ -12,7 +12,7 @@ const List = () => {
     const fetchLeaves = async () => {
         try {
             const cleanId = id.startsWith(":") ? id.slice(1) : id; // Remove leading colon if present
-            const response = await axios.get(`https://employee-api-pi-nine.vercel.app/api/leave/${cleanId}/${user.role}`, {
+            const response = await axios.get(`http://localhost:5000/api/leave/${cleanId}/${user.role}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
                 },
