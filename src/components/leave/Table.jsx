@@ -9,53 +9,20 @@ import axios from "axios"
 const Table = () => {
     const [leaves, setLeaves] = useState(null)
     const [filteredLeaves, setFilteredLeaves] = useState(null)
-    // const fetchLeaves = async () => {
-    //     try {
-    //         const response = await axios.get("http://localhost:5000/api/leave", {
-    //             headers: {
-    //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
-    //             },
-    //         });
-    //         console.log(response.data)
-    //         if (response.data.success) {
-    //             let sno = 1;
-    //             const data = await response.data.leaves.map((leave) => ({
-    //                 _id: leave._id,
-    //                 sno: sno++,
-    //                 employeeId: leave.employeeId.employeeId,
-    //                 name: leave.employeeId.userId.name,
-    //                 leaveType: leave.leaveType,
-    //                 department: leave.employeeId.department.dep_name,
-    //                 days:
-    //                     new Date(leave.endDate).getDate() -
-    //                     new Date(leave.startDate).getDate(),
-    //                 status: leave.status,
-    //                 action: <LeaveButtons Id={leave._id} />,
-    //             }));
-
-    //             setLeaves(data);
-    //         }
-    //     } catch (error) {
-    //         if (error.response && !error.response.data.success) {
-    //             alert(error.response.data.error);
-    //         }
-    //     }
-    // }
 
     const fetchLeaves = async () => {
         try {
-            const response = await axios.get("https://employee-api-pi-nine.vercel.app/api/leave", {
+            const response = await axios.get("https://employee-api-nfro.vercel.app/api/leave", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
             });
 
-            // console.log("Leaves Response:", response.data);
 
             if (response.data.success) {
                 let sno = 1;
                 const data = response.data.leaves
-                    .filter(leave => leave.employeeId) // skip entries with null employeeId
+                    .filter(leave => leave.employeeId)
                     .map((leave) => ({
                         _id: leave._id,
                         sno: sno++,
@@ -74,7 +41,6 @@ const Table = () => {
                 setFilteredLeaves(data)
             }
         } catch (error) {
-            // console.error("Fetch Leaves Error:", error);
             if (error.response && !error.response.data.success) {
                 alert(error.response.data.error);
             }

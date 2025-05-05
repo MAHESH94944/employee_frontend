@@ -123,7 +123,7 @@ const Add = () => {
     });
 
     try {
-      const response = await axios.post('https://employee-api-pi-nine.vercel.app/api/employee/add', formDataObj, {
+      const response = await axios.post('https://employee-api-nfro.vercel.app/api/employee/add', formDataObj, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`
         }

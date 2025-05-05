@@ -13,7 +13,7 @@ const AdminSymmary = () => {
     useEffect(() => {
         const fetchSummary = async () => {
             try {
-                const response = await axios.get("https://employee-api-pi-nine.vercel.app/api/dashboard/summary", {
+                const response = await axios.get("https://employee-api-nfro.vercel.app/api/dashboard/summary", {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },

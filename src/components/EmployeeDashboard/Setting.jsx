@@ -27,7 +27,7 @@ const Setting = () => {
             setError("Password does not match");
         } else {
             try {
-                const response = await axios.put("https://employee-api-pi-nine.vercel.app/api/setting/change-password", setting, {
+                const response = await axios.put("https://employee-api-nfro.vercel.app/api/setting/change-password", setting, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },
